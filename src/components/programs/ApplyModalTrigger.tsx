@@ -76,7 +76,7 @@ export default function ApplyModalTrigger({ programTitle }: Props) {
                       id="modal-name"
                       type="text"
                       required
-                      placeholder="e.g. Ramesh Kumar"
+                      placeholder={lang === "ta" ? "உங்கள் பெயரை உள்ளிடவும்" : "Enter your name"}
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#F68632]"
@@ -92,7 +92,7 @@ export default function ApplyModalTrigger({ programTitle }: Props) {
                         id="modal-mobile"
                         type="tel"
                         required
-                        placeholder="+91 98765 43210"
+                        placeholder={lang === "ta" ? "உங்கள் கைபேசி எண்ணை உள்ளிடவும்" : "Enter your mobile number"}
                         value={formData.mobile}
                         onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#F68632]"
@@ -106,7 +106,7 @@ export default function ApplyModalTrigger({ programTitle }: Props) {
                         id="modal-email"
                         type="email"
                         required
-                        placeholder="yourname@gmail.com"
+                        placeholder={lang === "ta" ? "உங்கள் மின்னஞ்சல் முகவரியை உள்ளிடவும்" : "Enter your email"}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#F68632]"

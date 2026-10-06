@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, MapPin, MessageSquare, CheckCircle2, ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
+import { Mail, MapPin, MessageSquare, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
 import { trustData } from "@/data/trustData";
 import PageHero from "@/components/layout/PageHero";
+import SocialIcon from "@/components/ui/SocialIcon";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ContactPage() {
@@ -38,8 +39,8 @@ export default function ContactPage() {
       a: "முக்கிய தகவல் தொழில்நுட்பப் பயிற்சி 6 மாதங்கள் (திங்கள் முதல் வெள்ளி காலை). பெண்கள் திட்டம் மற்றும் மென்திறன் பயிற்சிகளுக்கு நெகிழ்வான நேரங்கள் உள்ளன."
     },
     {
-      q: "நன்கொடைக்கு 80G வரி விலக்கு பெறுவது எப்படி?",
-      a: "நன்கொடை அளிக்கும் போது உங்கள் பான் (PAN) எண்ணை உள்ளிடவும். உடனடி ரசீது மற்றும் வருமான வரித் துறைக்கான படிவம் 10BE உங்கள் மின்னஞ்சலுக்கு அனுப்பப்படும்."
+      q: "நன்கொடை அல்லது CSR ஆதரவு அளிப்பது எப்படி?",
+      a: "எங்கள் தொடர்புப் படிவத்தில் 'நன்கொடை & CSR ஆதரவு' என்பதைத் தேர்ந்தெடுத்து உங்கள் விவரங்களை உள்ளிடலாம் அல்லது contact@addithalamfoundation.org முகவரிக்கு நேரடியாக தொடர்பு கொள்ளலாம்."
     }
   ] : [
     {
@@ -59,8 +60,8 @@ export default function ContactPage() {
       a: "Our core Technical Skills track runs for 6 months (Monday to Friday mornings). The Women in Tech program and Soft Skills tracks offer flexible morning, afternoon, or weekend schedules."
     },
     {
-      q: "How do I claim 50% tax deduction on my donation under Section 80G?",
-      a: "When you donate via our online Donate page or bank transfer, please provide your PAN. We issue an instant donation receipt and submit your filing to the Income Tax Department to generate Form 10BE."
+      q: "How can individuals or organizations support or donate to Addithalam?",
+      a: "You can reach out by selecting 'Donations & CSR Support' in our inquiry form or emailing contact@addithalamfoundation.org. Our team will promptly connect with you regarding partnership and project support."
     }
   ];
 
@@ -129,22 +130,23 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Social Channels */}
-            <div className="space-y-2 pt-2">
+            {/* Social Channels with Official Icons */}
+            <div className="space-y-3 pt-2">
               <p className="text-xs font-bold text-[#231F20] uppercase tracking-wider">
                 {c.followChannels}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex items-center space-x-3">
                 {trustData.socials.map((s) => (
                   <a
                     key={s.platform}
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1.5 rounded-lg bg-white border border-[#EFECE8] text-xs font-semibold text-slate-700 hover:text-[#F68632] hover:border-[#F68632]/40 flex items-center space-x-1"
+                    className="w-11 h-11 rounded-xl bg-white border border-[#EFECE8] text-[#231F20] hover:text-[#F68632] hover:border-[#F68632]/50 hover:shadow-xs flex items-center justify-center transition-all duration-200 active:scale-95"
+                    aria-label={`Addithalam Foundation on ${s.platform}`}
+                    title={s.platform}
                   >
-                    <span>{s.platform}</span>
-                    <ExternalLink className="w-3 h-3 text-slate-400" />
+                    <SocialIcon platform={s.platform} className="w-5 h-5" />
                   </a>
                 ))}
               </div>
@@ -171,7 +173,7 @@ export default function ContactPage() {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Meenakshi Sundaram"
+                    placeholder={lang === "ta" ? "உங்கள் பெயரை உள்ளிடவும்" : "Enter your name"}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#F68632]"
@@ -186,7 +188,7 @@ export default function ContactPage() {
                     <input
                       type="email"
                       required
-                      placeholder="meenakshi@example.com"
+                      placeholder={lang === "ta" ? "உங்கள் மின்னஞ்சல் முகவரியை உள்ளிடவும்" : "Enter your email"}
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#F68632]"
@@ -199,7 +201,7 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       required
-                      placeholder="+91 98400 12345"
+                      placeholder={lang === "ta" ? "உங்கள் கைபேசி எண்ணை உள்ளிடவும்" : "Enter your phone number"}
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#F68632]"
@@ -228,8 +230,8 @@ export default function ContactPage() {
                     <option value="Corporate CSR & Partnerships">
                       {lang === "ta" ? "நிறுவன CSR & கூட்டாண்மை" : "Corporate CSR & Partnerships"}
                     </option>
-                    <option value="Donation & 80G Tax Exemption">
-                      {lang === "ta" ? "நன்கொடை & 80G வரி விலக்கு" : "Donation & 80G Tax Exemption"}
+                    <option value="Donations & CSR Support">
+                      {lang === "ta" ? "நன்கொடை & CSR ஆதரவு" : "Donations & CSR Support"}
                     </option>
                     <option value="General Inquiry">
                       {lang === "ta" ? "பொதுவான கேள்விகள்" : "General Inquiry"}
@@ -244,7 +246,7 @@ export default function ContactPage() {
                   <textarea
                     rows={4}
                     required
-                    placeholder={lang === "ta" ? "உங்கள் தகவலை உள்ளிடவும்..." : "How can we assist you?"}
+                    placeholder={lang === "ta" ? "உங்கள் தகவலை உள்ளிடவும்..." : "Enter your message"}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#F68632]"

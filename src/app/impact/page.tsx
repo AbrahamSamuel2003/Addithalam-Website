@@ -8,7 +8,7 @@ import PageHero from "@/components/layout/PageHero";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ImpactPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const im = t.impactPage;
   const m = t.metrics;
   const s = t.stories;
@@ -130,16 +130,16 @@ export default function ImpactPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/donate"
+              href="/contact"
               className="px-6 py-3.5 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] transition-colors"
             >
               {im.donateBtn}
             </Link>
             <Link
-              href="/contact"
+              href="/programs"
               className="px-6 py-3.5 rounded-xl bg-white/10 text-white font-bold text-sm border border-white/20 hover:bg-white/20 transition-colors"
             >
-              {im.contactBtn}
+              {lang === "ta" ? "பயிற்சித் திட்டங்கள்" : "Explore Programs"}
             </Link>
           </div>
         </div>

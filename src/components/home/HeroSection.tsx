@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, HeartHandshake } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function HeroSection() {
@@ -33,7 +33,7 @@ export default function HeroSection() {
         </h1>
 
         {/* Supporting Strategic Copy with Staggered Transition */}
-        <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl mx-auto animate-hero-2">
+        <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto animate-hero-2">
           {h.subtext}
         </p>
 
@@ -47,10 +47,10 @@ export default function HeroSection() {
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
           <Link
-            href="/donate"
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-7 py-3.5 rounded-lg bg-white/10 text-white font-bold text-sm border border-white/30 hover:bg-white/20 active:scale-[0.98] transition-all backdrop-blur-xs"
           >
-            <HeartHandshake className="w-4 h-4 text-[#F68632]" />
+            <MessageSquare className="w-4 h-4 text-[#F68632]" />
             <span>{h.secondaryCta}</span>
           </Link>
         </div>

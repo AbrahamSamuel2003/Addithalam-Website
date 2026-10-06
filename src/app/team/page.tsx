@@ -42,7 +42,7 @@ export default function TeamPage() {
       {members.map((member) => (
         <div
           key={member.id}
-          className="bg-white rounded-2xl border border-[#EFECE8] overflow-hidden shadow-xs hover:border-[#F68632]/50 hover:shadow-md transition-all flex flex-col justify-between"
+          className="bg-white rounded-2xl border border-[#EFECE8] overflow-hidden shadow-xs hover:border-[#F68632]/50 hover:shadow-md transition-all flex flex-col justify-between text-center sm:text-left"
         >
           {/* Portrait Image */}
           <div className="relative aspect-square bg-slate-100 overflow-hidden">
@@ -107,7 +107,7 @@ export default function TeamPage() {
         
         {/* 1. Founding Members */}
         <div className="space-y-6">
-          <div className="border-b border-[#EFECE8] pb-3">
+          <div className="border-b border-[#EFECE8] pb-3 text-center sm:text-left">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#231F20]">
               {tm.foundersTitle}
             </h2>
@@ -120,7 +120,7 @@ export default function TeamPage() {
 
         {/* 2. Core Team */}
         <div className="space-y-6">
-          <div className="border-b border-[#EFECE8] pb-3">
+          <div className="border-b border-[#EFECE8] pb-3 text-center sm:text-left">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#231F20]">
               {tm.coreTeamTitle}
             </h2>
@@ -133,7 +133,7 @@ export default function TeamPage() {
 
         {/* 3. Patron & Advisory */}
         <div className="space-y-6">
-          <div className="border-b border-[#EFECE8] pb-3">
+          <div className="border-b border-[#EFECE8] pb-3 text-center sm:text-left">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#231F20]">
               {tm.advisorsTitle}
             </h2>
@@ -145,9 +145,9 @@ export default function TeamPage() {
         </div>
 
         {/* 4. Volunteers Section */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#EFECE8] shadow-sm space-y-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="space-y-2 max-w-2xl">
+        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#EFECE8] shadow-sm space-y-8 text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-4">
+            <div className="space-y-2 max-w-2xl flex flex-col items-center md:items-start">
               <span className="text-xs font-bold text-[#F68632] uppercase tracking-wider block">
                 Volunteer Community
               </span>
@@ -160,7 +160,7 @@ export default function TeamPage() {
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] transition-colors shrink-0 shadow-xs"
+              className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] transition-colors shrink-0 shadow-xs w-full sm:w-auto justify-center"
             >
               <span>{tm.connectVolunteerBtn}</span>
               <ArrowRight className="w-4 h-4" />
@@ -171,7 +171,7 @@ export default function TeamPage() {
             {volunteerRoles.map((role) => (
               <div
                 key={role.title}
-                className="p-5 rounded-xl bg-[#FAF8F5] border border-[#EFECE8] space-y-2"
+                className="p-5 rounded-xl bg-[#FAF8F5] border border-[#EFECE8] space-y-2 text-center sm:text-left"
               >
                 <h4 className="font-heading font-bold text-sm text-[#231F20]">
                   {role.title}

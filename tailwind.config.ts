@@ -22,7 +22,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "sans-serif"],
-        heading: ["var(--font-manrope)", "Manrope", "sans-serif"],
+        heading: ["var(--font-heading)", "'Plus Jakarta Sans'", "Inter", "sans-serif"],
       },
     },
   },

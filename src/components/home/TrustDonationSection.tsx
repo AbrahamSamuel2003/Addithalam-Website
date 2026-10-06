@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ShieldCheck, HeartHandshake, ArrowRight, FileCheck, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, ArrowRight, FileCheck, CheckCircle2, Building2 } from "lucide-react";
 import { trustData } from "@/data/trustData";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -49,13 +49,13 @@ export default function TrustDonationSection() {
             </div>
           </div>
 
-          {/* Right Column: Giving Card with Presets */}
+          {/* Right Column: Giving & Partnership Card */}
           <div className="lg:col-span-6">
             <div className="p-8 rounded-3xl bg-white text-slate-900 shadow-2xl border border-slate-200 space-y-6">
               
               <div className="space-y-2">
                 <div className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#F68632] uppercase tracking-wider">
-                  <HeartHandshake className="w-4 h-4" />
+                  <Building2 className="w-4 h-4" />
                   <span>{td.cardSubtitle}</span>
                 </div>
                 <h3 className="font-heading font-extrabold text-2xl text-[#231F20]">
@@ -66,30 +66,30 @@ export default function TrustDonationSection() {
                 </p>
               </div>
 
-              {/* Preset Impact Tiers */}
+              {/* Engagement Tiers */}
               <div className="grid grid-cols-3 gap-3">
                 <div className="p-3.5 rounded-xl border border-[#EFECE8] bg-[#FAF8F5] text-center space-y-1">
-                  <span className="font-heading font-extrabold text-lg text-[#231F20] block">
-                    ₹1,000
-                  </span>
-                  <span className="text-[11px] text-slate-600 font-medium block">
+                  <span className="font-heading font-extrabold text-xs text-[#231F20] block">
                     {td.tier1Label}
+                  </span>
+                  <span className="text-[11px] text-slate-500 block">
+                    Mentorship & Kits
                   </span>
                 </div>
                 <div className="p-3.5 rounded-xl border-2 border-[#F68632] bg-[#FFF2E7] text-center space-y-1">
-                  <span className="font-heading font-extrabold text-lg text-[#F68632] block">
-                    ₹3,000
+                  <span className="font-heading font-extrabold text-xs text-[#F68632] block">
+                    {td.tier2Label}
                   </span>
                   <span className="text-[11px] text-[#231F20] font-bold block">
-                    {td.tier2Label}
+                    Workstation Labs
                   </span>
                 </div>
                 <div className="p-3.5 rounded-xl border border-[#EFECE8] bg-[#FAF8F5] text-center space-y-1">
-                  <span className="font-heading font-extrabold text-lg text-[#231F20] block">
-                    ₹5,000
-                  </span>
-                  <span className="text-[11px] text-slate-600 font-medium block">
+                  <span className="font-heading font-extrabold text-xs text-[#231F20] block">
                     {td.tier3Label}
+                  </span>
+                  <span className="text-[11px] text-slate-500 block">
+                    Strategic CSR
                   </span>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function TrustDonationSection() {
               {/* Action Button */}
               <div className="pt-2">
                 <Link
-                  href="/donate"
+                  href="/contact"
                   className="flex items-center justify-center space-x-2 w-full py-4 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] active:scale-[0.98] transition-all shadow-md"
                 >
                   <span>{td.donateBtn}</span>

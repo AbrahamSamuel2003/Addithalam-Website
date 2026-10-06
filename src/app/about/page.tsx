@@ -164,15 +164,15 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
             <Link
               href="/contact"
-              className="px-6 py-3 rounded-xl bg-white text-[#231F20] font-bold text-sm hover:bg-slate-100 transition-colors"
+              className="px-6 py-3 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] transition-colors"
             >
               Get in Touch
             </Link>
             <Link
-              href="/donate"
-              className="px-6 py-3 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] transition-colors"
+              href="/programs"
+              className="px-6 py-3 rounded-xl bg-white/10 text-white font-bold text-sm border border-white/20 hover:bg-white/20 transition-colors"
             >
-              Donate Now (80G)
+              Explore Programs
             </Link>
           </div>
         </div>
