@@ -81,41 +81,50 @@ export default function ImpactPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {learnerStories.map((story) => (
-            <div
-              key={story.id}
-              className="bg-white rounded-2xl border border-[#EFECE8] p-7 shadow-xs hover:border-[#F68632]/50 hover:shadow-lg transition-all flex flex-col justify-between space-y-6"
-            >
-              <div className="space-y-4">
-                <Quote className="w-8 h-8 text-[#F68632] opacity-80" />
-                <p className="text-sm sm:text-base text-slate-800 leading-relaxed italic">
-                  &ldquo;{story.quote}&rdquo;
-                </p>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          {learnerStories.map((story) => {
+            const isTa = lang === "ta";
+            const name = isTa && story.nameTa ? story.nameTa : story.name;
+            const background = isTa && story.backgroundTa ? story.backgroundTa : story.background;
+            const quote = isTa && story.quoteTa ? story.quoteTa : story.quote;
+            const outcomeRole = isTa && story.outcomeRoleTa ? story.outcomeRoleTa : story.outcomeRole;
+            const companyCategory = isTa && story.companyCategoryTa ? story.companyCategoryTa : story.companyCategory;
 
-              <div className="space-y-3 pt-4 border-t border-[#EFECE8]">
-                <div>
-                  <h4 className="font-heading font-bold text-base text-[#231F20]">
-                    {story.name}
-                  </h4>
-                  <p className="text-xs text-slate-500">
-                    {story.background}
+            return (
+              <div
+                key={story.id}
+                className="bg-white rounded-2xl border border-[#EFECE8] p-6 sm:p-7 shadow-xs hover:border-[#F68632]/50 hover:shadow-lg transition-all flex flex-col justify-between space-y-6 text-left"
+              >
+                <div className="space-y-4">
+                  <Quote className="w-8 h-8 text-[#F68632] opacity-80 shrink-0" />
+                  <p className="text-sm sm:text-base text-slate-800 leading-relaxed italic">
+                    &ldquo;{quote}&rdquo;
                   </p>
                 </div>
 
-                <div className="p-3 rounded-xl bg-[#FFF2E7] border border-[#F68632]/30 space-y-1 text-xs">
-                  <span className="font-bold text-[#231F20] block">
-                    {s.verifiedOutcome}:
-                  </span>
-                  <div className="flex items-center space-x-1.5 text-[#F68632] font-bold">
-                    <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                    <span>{story.outcomeRole} ({story.companyCategory})</span>
+                <div className="space-y-3 pt-4 border-t border-[#EFECE8]">
+                  <div>
+                    <h4 className="font-heading font-bold text-base text-[#231F20]">
+                      {name}
+                    </h4>
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      {background}
+                    </p>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-[#FFF2E7] border border-[#F68632]/30 space-y-1 text-xs">
+                    <span className="font-bold text-[#231F20] block">
+                      {s.verifiedOutcome}:
+                    </span>
+                    <div className="flex items-center space-x-1.5 text-[#F68632] font-bold">
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                      <span>{outcomeRole} ({companyCategory})</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

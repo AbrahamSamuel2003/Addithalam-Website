@@ -108,7 +108,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation (Instant 0-latency prefetching) */}
-        <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+        <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 shrink-0">
           {navLinks.map((link) => {
             const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
@@ -116,9 +116,9 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 prefetch={true}
-                className={`px-3.5 py-2 rounded-md text-sm font-medium transition-colors duration-100 ${
+                className={`px-3 py-2 xl:px-4 xl:py-2 rounded-xl text-sm font-semibold transition-all duration-150 whitespace-nowrap shrink-0 ${
                   isActive
-                    ? "text-[#F68632] bg-[#FFF2E7] font-bold"
+                    ? "text-[#F68632] bg-[#FFF2E7] font-bold shadow-2xs"
                     : "text-[#231F20] hover:text-[#F68632] hover:bg-black/5"
                 }`}
               >
@@ -129,12 +129,12 @@ export default function Header() {
         </nav>
 
         {/* Right Actions: Language Switch & Contact Button */}
-        <div className="hidden lg:flex items-center space-x-3">
+        <div className="hidden lg:flex items-center space-x-3 shrink-0">
           {/* Language Toggle Button */}
           <button
             onClick={toggleLang}
             type="button"
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-semibold text-[#231F20] border border-slate-300 bg-white hover:bg-slate-50 transition-colors duration-100 active:scale-95 focus:outline-none cursor-pointer"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-[#231F20] border border-[#EFECE8] bg-white hover:bg-slate-50 hover:border-slate-300 transition-all duration-150 active:scale-95 focus:outline-none cursor-pointer shadow-2xs whitespace-nowrap shrink-0"
             title="Switch Language / மொழியை மாற்றவும்"
             aria-label="Switch between English and Tamil"
           >
@@ -146,9 +146,9 @@ export default function Header() {
           <Link
             href="/contact"
             prefetch={true}
-            className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-lg bg-[#F68632] text-white text-sm font-bold hover:bg-[#E07418] active:scale-[0.98] transition-all duration-100 shadow-xs"
+            className="inline-flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl bg-[#F68632] text-white text-sm font-bold hover:bg-[#E07418] active:scale-[0.98] transition-all duration-150 shadow-xs hover:shadow-md whitespace-nowrap shrink-0"
           >
-            <MessageSquare className="w-4 h-4" />
+            <MessageSquare className="w-4 h-4 shrink-0" />
             <span>{navT.donate}</span>
           </Link>
         </div>
@@ -158,7 +158,7 @@ export default function Header() {
           <button
             onClick={toggleLang}
             type="button"
-            className="px-2.5 py-1 text-xs font-semibold text-[#231F20] border border-slate-300 rounded bg-white active:scale-95 transition-transform"
+            className="px-3 py-1.5 text-xs font-semibold text-[#231F20] border border-[#EFECE8] rounded-xl bg-white active:scale-95 transition-all shadow-2xs whitespace-nowrap"
             aria-label="Switch Language"
           >
             {lang === "en" ? "தமிழ்" : "EN"}
@@ -166,7 +166,7 @@ export default function Header() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             type="button"
-            className="p-2 rounded-md text-[#231F20] hover:bg-slate-100 active:scale-90 transition-all duration-75 focus:outline-none cursor-pointer"
+            className="p-2 rounded-xl text-[#231F20] hover:bg-slate-100 active:scale-90 transition-all duration-75 focus:outline-none cursor-pointer"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
@@ -193,7 +193,7 @@ export default function Header() {
                 href={link.href}
                 prefetch={true}
                 onClick={closeMenu}
-                className={`block px-3.5 py-2.5 rounded-lg text-base font-medium transition-colors duration-75 active:scale-[0.98] ${
+                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-colors duration-75 active:scale-[0.98] ${
                   isActive
                     ? "text-[#F68632] bg-[#FFF2E7] font-bold"
                     : "text-slate-800 hover:bg-slate-50"
@@ -210,9 +210,9 @@ export default function Header() {
             href="/contact"
             prefetch={true}
             onClick={closeMenu}
-            className="flex items-center justify-center space-x-2 w-full py-3 rounded-lg bg-[#F68632] text-white font-bold text-center active:scale-[0.98] transition-all duration-75 shadow-xs"
+            className="flex items-center justify-center space-x-2 w-full py-3.5 px-4 rounded-xl bg-[#F68632] text-white font-bold text-base text-center active:scale-[0.98] transition-all duration-75 shadow-sm"
           >
-            <MessageSquare className="w-5 h-5" />
+            <MessageSquare className="w-5 h-5 shrink-0" />
             <span>{navT.donate}</span>
           </Link>
         </div>

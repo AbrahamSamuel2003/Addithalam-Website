@@ -13,16 +13,28 @@ interface Props {
 }
 
 export default function ProgramDetailView({ program }: Props) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const d = t.programDetail;
+  const isTa = lang === "ta";
+
+  const title = isTa && program.titleTa ? program.titleTa : program.title;
+  const badge = isTa && program.badgeTa ? program.badgeTa : program.badge;
+  const fullDesc = isTa && program.fullDescriptionTa ? program.fullDescriptionTa : program.fullDescription;
+  const targetAudience = isTa && program.targetAudienceTa ? program.targetAudienceTa : program.targetAudience;
+  const duration = isTa && program.durationTa ? program.durationTa : program.duration;
+  const schedule = isTa && program.scheduleTa ? program.scheduleTa : program.schedule;
+  const mode = isTa && program.modeTa ? program.modeTa : program.mode;
+  const curriculum = isTa && program.curriculumTa ? program.curriculumTa : program.curriculum;
+  const outcomes = isTa && program.outcomesTa ? program.outcomesTa : program.outcomes;
+  const eligibility = isTa && program.eligibilityTa ? program.eligibilityTa : program.eligibility;
 
   return (
     <div className="bg-[#FAF8F5]">
       {/* Immersive PageHero with Background Image */}
       <PageHero
-        badge={program.badge}
-        title={program.title}
-        subtitle={program.fullDescription}
+        badge={badge}
+        title={title}
+        subtitle={fullDesc}
         backgroundImage={program.image || "/images/hero/hero-student-lab.jpg"}
       >
         <div className="pt-2">
@@ -49,7 +61,7 @@ export default function ProgramDetailView({ program }: Props) {
                 {d.whoIsItFor}
               </h2>
               <p className="text-sm sm:text-base text-slate-800 leading-relaxed text-left sm:text-left">
-                {program.targetAudience}
+                {targetAudience}
               </p>
             </div>
 
@@ -65,7 +77,7 @@ export default function ProgramDetailView({ program }: Props) {
               </div>
 
               <div className="space-y-4">
-                {program.curriculum.map((module, idx) => (
+                {curriculum.map((module, idx) => (
                   <div
                     key={module.moduleTitle}
                     className="p-6 rounded-2xl bg-white border border-[#EFECE8] shadow-xs space-y-3 text-left"
@@ -99,7 +111,7 @@ export default function ProgramDetailView({ program }: Props) {
                 </h2>
               </div>
               <div className="p-6 rounded-2xl bg-[#FFF2E7] border border-[#F68632]/30 space-y-3 text-left">
-                {program.outcomes.map((outcome) => (
+                {outcomes.map((outcome) => (
                   <div key={outcome} className="flex items-start space-x-2.5 text-sm text-[#231F20] font-medium">
                     <CheckCircle2 className="w-4 h-4 text-[#F68632] shrink-0 mt-0.5" />
                     <span>{outcome}</span>
@@ -115,7 +127,7 @@ export default function ProgramDetailView({ program }: Props) {
             <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#EFECE8] shadow-md space-y-6">
               <div className="space-y-1 text-center sm:text-left">
                 <span className="text-xs font-bold text-[#F68632] uppercase tracking-wider block">
-                  Program Details
+                  {d.logisticsBadge}
                 </span>
                 <h3 className="font-heading font-bold text-xl text-[#231F20]">
                   {d.logisticsTitle}
@@ -128,8 +140,8 @@ export default function ProgramDetailView({ program }: Props) {
                   <Clock className="w-4 h-4 text-[#F68632] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold block text-slate-900">{d.durationSchedule}</span>
-                    <span>{program.duration}</span>
-                    <span className="block text-slate-500 text-xs">{program.schedule}</span>
+                    <span>{duration}</span>
+                    <span className="block text-slate-500 text-xs">{schedule}</span>
                   </div>
                 </div>
 
@@ -137,7 +149,7 @@ export default function ProgramDetailView({ program }: Props) {
                   <MapPin className="w-4 h-4 text-[#F68632] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold block text-slate-900">{d.trainingMode}</span>
-                    <span>{program.mode} (Chennai)</span>
+                    <span>{mode}</span>
                   </div>
                 </div>
 
@@ -156,7 +168,7 @@ export default function ProgramDetailView({ program }: Props) {
                   {d.eligibilityTitle}
                 </p>
                 <ul className="space-y-1.5 text-xs text-slate-600">
-                  {program.eligibility.map((e) => (
+                  {eligibility.map((e) => (
                     <li key={e} className="flex items-start space-x-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#F68632] shrink-0 mt-0.5" />
                       <span>{e}</span>
@@ -167,14 +179,14 @@ export default function ProgramDetailView({ program }: Props) {
 
               {/* Interactive Apply Button Trigger */}
               <div className="pt-2">
-                <ApplyModalTrigger programTitle={program.title} />
+                <ApplyModalTrigger programTitle={title} />
               </div>
 
               <div className="text-center">
                 <p className="text-[11px] text-slate-500">
                   {d.questionsText}{" "}
                   <Link href="/contact" className="underline font-semibold text-[#F68632]">
-                    Contact Page
+                    {d.contactLinkText}
                   </Link>.
                 </p>
               </div>

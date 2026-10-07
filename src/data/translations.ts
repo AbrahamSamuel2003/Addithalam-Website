@@ -1,62 +1,62 @@
-export type Language = "en" | "ta";
+  export type Language = "en" | "ta";
 
-export const translations = {
-  en: {
-    nav: {
-      home: "Home",
-      about: "About",
-      programs: "Programs",
-      impact: "Impact",
-      gallery: "Gallery",
-      team: "Team",
-      contact: "Contact",
-      donate: "Get in Touch",
-      switchLangText: "தமிழ்",
-      switchLangAria: "Switch to Tamil",
-    },
-    footer: {
-      tagline: "Empowering underprivileged students, women, and young learners in Chennai through free, industry-grade IT education, 1-on-1 mentorship, and structured career pathways.",
-      statutoryTrust: "Statutory Trust Registration",
-      registeredDetails: "Registered Non-Profit Public Charitable Trust (Chennai, Tamil Nadu)",
-      taxBenefitNote: "Registered under Section 12A & 80G with annual statutory compliance and public filings.",
-      exploreTitle: "Explore",
-      ourMissionStory: "Our Mission & Story",
-      impactPlacements: "Impact & Placements",
-      leadershipTeam: "Leadership & Team",
-      contactLocation: "Contact & Location",
-      programsTitle: "Programs",
-      supportTitle: "Support & Contact",
-      donate80G: "Donations & CSR Support",
-      volunteerInquiries: "Volunteer & CSR Inquiries",
-      locationChennai: "Chennai, Tamil Nadu, India",
-      copyright: "All rights reserved. Registered Charitable Trust (India).",
-      privacyPolicy: "Privacy Policy",
-      termsOfService: "Terms of Service"
-    },
-    hero: {
-      badge: "Free IT Education & Mentorship in Chennai",
-      headlinePrimary: "Talent is everywhere.",
-      headlineSecondary: "Opportunity shouldn't be.",
-      subtext: "Free, industry-grade IT education, 1-on-1 mentorship, and tech career pathways for underprivileged students and women in Chennai.",
-      primaryCta: "Explore Our Programs",
-      secondaryCta: "Get in Touch",
-      trustStat1: "100% Free Tuition & Labs",
-      trustStat2: "1-on-1 Senior Mentorship",
-      trustStat3: "Placement Interview Prep",
-      registeredTrustBadge: "Registered Public Charitable Trust",
-      chennaiNote: "Chennai, Tamil Nadu | Non-Profit Trust",
-      ourStoryLink: "Our Story →"
-    },
-    metrics: {
-      studentsTrained: "Learners Upskilled",
-      studentsTrainedDesc: "Equipped with industry-grade programming, problem solving, and soft skills.",
-      womenEmpowered: "Women in Tech Empowered",
-      womenEmpoweredDesc: "Supported through flexible skilling, career re-entry, and mentor circles.",
-      mentorsCount: "Industry Mentors",
-      mentorsCountDesc: "Senior engineers and leaders providing dedicated 1-on-1 career navigation.",
-      freeAccess: "Free & Merit-Based",
-      freeAccessDesc: "Zero tuition fees or hidden charges for any student from day one."
-    },
+  export const translations = {
+    en: {
+      nav: {
+        home: "Home",
+        about: "About",
+        programs: "Programs",
+        impact: "Impact",
+        gallery: "Gallery",
+        team: "Team",
+        contact: "Contact",
+        donate: "Get in Touch",
+        switchLangText: "தமிழ்",
+        switchLangAria: "Switch to Tamil",
+      },
+      footer: {
+        tagline: "Empowering underprivileged students, women, and young learners in Chennai through free, industry-grade IT education, 1-on-1 mentorship, and structured career pathways.",
+        statutoryTrust: "Statutory Trust Registration",
+        registeredDetails: "Registered Non-Profit Public Charitable Trust (Chennai, Tamil Nadu)",
+        taxBenefitNote: "Registered under Section 12A & 80G with annual statutory compliance and public filings.",
+        exploreTitle: "Explore",
+        ourMissionStory: "Our Mission & Story",
+        impactPlacements: "Impact & Placements",
+        leadershipTeam: "Leadership & Team",
+        contactLocation: "Contact & Location",
+        programsTitle: "Programs",
+        supportTitle: "Support & Contact",
+        donate80G: "Donations & CSR Support",
+        volunteerInquiries: "Volunteer & CSR Inquiries",
+        locationChennai: "Chennai, Tamil Nadu, India",
+        copyright: "All rights reserved. Registered Charitable Trust (India).",
+        privacyPolicy: "Privacy Policy",
+        termsOfService: "Terms of Service"
+      },
+      hero: {
+        badge: "Free IT Education & Mentorship in Chennai",
+        headlinePrimary: "Talent is everywhere.",
+        headlineSecondary: "Opportunity shouldn't be.",
+        subtext: "Free, industry-grade IT education, 1-on-1 mentorship, and tech career pathways for underprivileged students and women in Chennai.",
+        primaryCta: "Explore Our Programs",
+        secondaryCta: "Get in Touch",
+        trustStat1: "100% Free Tuition & Labs",
+        trustStat2: "1-on-1 Senior Mentorship",
+        trustStat3: "Placement Interview Prep",
+        registeredTrustBadge: "Registered Public Charitable Trust",
+        chennaiNote: "Chennai, Tamil Nadu | Non-Profit Trust",
+        ourStoryLink: "Our Story →"
+      },
+      metrics: {
+        studentsTrained: "Learners Upskilled",
+        studentsTrainedDesc: "Equipped with industry-grade programming, problem solving, and soft skills.",
+        womenEmpowered: "Women in Tech Empowered",
+        womenEmpoweredDesc: "Supported through flexible skilling, career re-entry, and mentor circles.",
+        mentorsCount: "Industry Mentors",
+        mentorsCountDesc: "Senior engineers and leaders providing dedicated 1-on-1 career navigation.",
+        freeAccess: "Free & Merit-Based",
+        freeAccessDesc: "Zero tuition fees or hidden charges for any student from day one."
+      },
     doors: {
       badge: "Who We Serve",
       title: "Every learner deserves a starting point.",
@@ -206,6 +206,7 @@ export const translations = {
       syllabusTitle: "Structured Curriculum & Syllabus",
       syllabusDesc: "Practical, step-by-step modular progression focused on code craftsmanship and live projects.",
       outcomesTitle: "Expected Learning Outcomes",
+      logisticsBadge: "Program Details",
       logisticsTitle: "Application & Eligibility",
       durationSchedule: "Duration & Schedule:",
       trainingMode: "Training Mode:",
@@ -213,7 +214,8 @@ export const translations = {
       freeBadge: "100% Free of Cost",
       eligibilityTitle: "Eligibility:",
       applyBtn: "Apply for This Program (Free)",
-      questionsText: "Questions? Call or WhatsApp our Chennai helpdesk via"
+      questionsText: "Questions? Reach out via our",
+      contactLinkText: "Contact Page"
     },
     teamPage: {
       heroBadge: "Leadership & Team",
@@ -316,13 +318,13 @@ export const translations = {
   ta: {
     nav: {
       home: "முகப்பு",
-      about: "அமைப்பைப் பற்றி",
-      programs: "பயிற்சித் திட்டங்கள்",
+      about: "பற்றி",
+      programs: "திட்டங்கள்",
       impact: "தாக்கம்",
-      gallery: "புகைப்படங்கள்",
-      team: "நிர்வாகக் குழு",
+      gallery: "படங்கள்",
+      team: "குழு",
       contact: "தொடர்பு",
-      donate: "தொடர்பு கொள்ள",
+      donate: "தொடர்புக்கு",
       switchLangText: "English",
       switchLangAria: "ஆங்கிலத்திற்கு மாற்றவும்",
     },
@@ -518,6 +520,7 @@ export const translations = {
       syllabusTitle: "முறைப்படுத்தப்பட்ட பாடத்திட்டம்",
       syllabusDesc: "நடைமுறை குறியீட்டுத் திறன் மற்றும் நேரடித் திட்டங்களை அடிப்படையாகக் கொண்ட படிநிலைப் பயிற்சி.",
       outcomesTitle: "கற்றலின் முடிவுகள்",
+      logisticsBadge: "திட்ட விவரங்கள்",
       logisticsTitle: "விண்ணப்பம் & தகுதி விவரங்கள்",
       durationSchedule: "கால அளவு & நேரம்:",
       trainingMode: "பயிற்சி முறை:",
@@ -525,7 +528,8 @@ export const translations = {
       freeBadge: "100% முற்றிலும் இலவசம்",
       eligibilityTitle: "சேர்வதற்கான தகுதிகள்:",
       applyBtn: "இப்பயிற்சிக்கு விண்ணப்பிக்க (இலவசம்)",
-      questionsText: "சந்தேகங்களா? எங்களை தொடர்பு கொள்ளவும்:"
+      questionsText: "சந்தேகங்களா? எங்களை தொடர்பு கொள்ளவும்:",
+      contactLinkText: "தொடர்பு பக்கம்"
     },
     teamPage: {
       heroBadge: "நிர்வாகம் & வழிகாட்டல்",

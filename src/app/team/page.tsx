@@ -37,58 +37,66 @@ export default function TeamPage() {
     },
   ];
 
+  const isTa = lang === "ta";
+
   const renderGrid = (members: TeamMember[]) => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      {members.map((member) => (
-        <div
-          key={member.id}
-          className="bg-white rounded-2xl border border-[#EFECE8] overflow-hidden shadow-xs hover:border-[#F68632]/50 hover:shadow-md transition-all flex flex-col justify-between text-center sm:text-left"
-        >
-          {/* Portrait Image */}
-          <div className="relative aspect-square bg-slate-100 overflow-hidden">
-            <Image
-              src={member.image}
-              alt={`${member.name}, ${member.role}`}
-              fill
-              className="object-cover transition-transform duration-300 hover:scale-105"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            />
-          </div>
+      {members.map((member) => {
+        const name = isTa && member.nameTa ? member.nameTa : member.name;
+        const role = isTa && member.roleTa ? member.roleTa : member.role;
+        const category = isTa && member.categoryTa ? member.categoryTa : member.category;
 
-          {/* Member Details */}
-          <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
-            <div className="space-y-1">
-              <span className="text-[11px] font-bold text-[#F68632] uppercase tracking-wider block">
-                {member.category}
-              </span>
-              <h3 className="font-heading font-bold text-base text-[#231F20] leading-snug">
-                {member.name}
-              </h3>
-              <p className="text-xs text-slate-600 font-medium">
-                {member.role}
-              </p>
+        return (
+          <div
+            key={member.id}
+            className="bg-white rounded-2xl border border-[#EFECE8] overflow-hidden shadow-xs hover:border-[#F68632]/50 hover:shadow-md transition-all flex flex-col justify-between text-left"
+          >
+            {/* Portrait Image */}
+            <div className="relative aspect-square bg-slate-100 overflow-hidden">
+              <Image
+                src={member.image}
+                alt={`${name}, ${role}`}
+                fill
+                className="object-cover transition-transform duration-300 hover:scale-105"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
             </div>
 
-            <div className="pt-3 border-t border-[#EFECE8] flex items-center justify-between">
-              <button
-                onClick={() => setSelectedMember(member)}
-                className="text-xs font-bold text-[#F68632] hover:text-[#231F20] transition-colors"
-              >
-                {l.readBioBtn}
-              </button>
-              <a
-                href={member.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-1.5 rounded text-slate-400 hover:text-[#F68632] hover:bg-[#FFF2E7] transition-colors"
-                aria-label={`${member.name} LinkedIn Profile`}
-              >
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+            {/* Member Details */}
+            <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
+              <div className="space-y-1">
+                <span className="text-[11px] font-bold text-[#F68632] uppercase tracking-wider block">
+                  {category}
+                </span>
+                <h3 className="font-heading font-bold text-base text-[#231F20] leading-snug">
+                  {name}
+                </h3>
+                <p className="text-xs text-slate-600 font-medium">
+                  {role}
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-[#EFECE8] flex items-center justify-between">
+                <button
+                  onClick={() => setSelectedMember(member)}
+                  className="text-xs font-bold text-[#F68632] hover:text-[#231F20] transition-colors"
+                >
+                  {l.readBioBtn}
+                </button>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1.5 rounded text-slate-400 hover:text-[#F68632] hover:bg-[#FFF2E7] transition-colors"
+                  aria-label={`${name} LinkedIn Profile`}
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 
@@ -147,9 +155,9 @@ export default function TeamPage() {
         {/* 4. Volunteers Section */}
         <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#EFECE8] shadow-sm space-y-8 text-center md:text-left">
           <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-4">
-            <div className="space-y-2 max-w-2xl flex flex-col items-center md:items-start">
+            <div className="space-y-2 max-w-2xl flex flex-col items-center md:items-start text-center md:text-left">
               <span className="text-xs font-bold text-[#F68632] uppercase tracking-wider block">
-                Volunteer Community
+                {isTa ? "தன்னார்வலர் சமூகம்" : "Volunteer Community"}
               </span>
               <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#231F20]">
                 {tm.volunteerTitle}
@@ -171,7 +179,7 @@ export default function TeamPage() {
             {volunteerRoles.map((role) => (
               <div
                 key={role.title}
-                className="p-5 rounded-xl bg-[#FAF8F5] border border-[#EFECE8] space-y-2 text-center sm:text-left"
+                className="p-5 rounded-xl bg-[#FAF8F5] border border-[#EFECE8] space-y-2 text-left"
               >
                 <h4 className="font-heading font-bold text-sm text-[#231F20]">
                   {role.title}
@@ -189,7 +197,7 @@ export default function TeamPage() {
       {/* Interactive Bio Modal */}
       {selectedMember && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 relative shadow-2xl animate-in fade-in zoom-in-95 duration-150">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 relative shadow-2xl animate-in fade-in zoom-in-95 duration-150 text-left">
             <button
               onClick={() => setSelectedMember(null)}
               className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-700 rounded-full hover:bg-slate-100"
@@ -202,20 +210,20 @@ export default function TeamPage() {
               <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 border border-slate-200">
                 <Image
                   src={selectedMember.image}
-                  alt={selectedMember.name}
+                  alt={isTa && selectedMember.nameTa ? selectedMember.nameTa : selectedMember.name}
                   fill
                   className="object-cover"
                 />
               </div>
               <div>
                 <span className="text-[11px] font-bold text-[#F68632] uppercase tracking-wider block">
-                  {selectedMember.category}
+                  {isTa && selectedMember.categoryTa ? selectedMember.categoryTa : selectedMember.category}
                 </span>
                 <h3 className="font-heading font-bold text-lg text-[#231F20]">
-                  {selectedMember.name}
+                  {isTa && selectedMember.nameTa ? selectedMember.nameTa : selectedMember.name}
                 </h3>
                 <p className="text-xs text-slate-600 font-medium">
-                  {selectedMember.role}
+                  {isTa && selectedMember.roleTa ? selectedMember.roleTa : selectedMember.role}
                 </p>
               </div>
             </div>
@@ -225,7 +233,7 @@ export default function TeamPage() {
                 {l.focusTitle}
               </p>
               <p className="text-xs text-[#F68632] font-semibold bg-[#FFF2E7] p-2.5 rounded-lg border border-[#F68632]/20">
-                {selectedMember.focusArea}
+                {isTa && selectedMember.focusAreaTa ? selectedMember.focusAreaTa : selectedMember.focusArea}
               </p>
             </div>
 
@@ -234,7 +242,7 @@ export default function TeamPage() {
                 {l.bioModalTitle}
               </p>
               <p className="text-sm text-slate-700 leading-relaxed">
-                {selectedMember.bio}
+                {isTa && selectedMember.bioTa ? selectedMember.bioTa : selectedMember.bio}
               </p>
             </div>
 

@@ -7,8 +7,9 @@ import { Quote, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function LearnerStories() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const s = t.stories;
+  const isTa = lang === "ta";
 
   return (
     <section className="py-12 sm:py-16 bg-[#FAF8F5] border-b border-[#EFECE8]">
@@ -28,33 +29,40 @@ export default function LearnerStories() {
         </div>
 
         {/* Stories Grid */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {learnerStories.map((story) => (
-            <div
-              key={story.id}
-              className="flex flex-col justify-between rounded-2xl border border-[#EFECE8] bg-[#FAF8F5] p-7 space-y-6 hover:border-[#F68632]/50 hover:shadow-md transition-all"
-            >
-              <div className="space-y-4">
-                <Quote className="w-8 h-8 text-[#F68632] opacity-80" />
-                <p className="text-sm sm:text-base text-slate-800 leading-relaxed italic">
-                  &ldquo;{story.quote}&rdquo;
-                </p>
-              </div>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          {learnerStories.map((story) => {
+            const name = isTa && story.nameTa ? story.nameTa : story.name;
+            const quote = isTa && story.quoteTa ? story.quoteTa : story.quote;
+            const outcomeRole = isTa && story.outcomeRoleTa ? story.outcomeRoleTa : story.outcomeRole;
+            const program = isTa && story.programTa ? story.programTa : story.program;
 
-              <div className="pt-4 border-t border-[#EFECE8] space-y-1.5">
-                <h4 className="font-heading font-bold text-base text-[#231F20]">
-                  {story.name}
-                </h4>
-                <div className="flex items-center space-x-1.5 text-xs text-[#F68632] font-bold">
-                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                  <span>{story.outcomeRole}</span>
+            return (
+              <div
+                key={story.id}
+                className="flex flex-col justify-between rounded-2xl border border-[#EFECE8] bg-white p-6 sm:p-7 space-y-6 hover:border-[#F68632]/50 hover:shadow-md transition-all text-left"
+              >
+                <div className="space-y-4">
+                  <Quote className="w-8 h-8 text-[#F68632] opacity-80 shrink-0" />
+                  <p className="text-sm sm:text-base text-slate-800 leading-relaxed italic">
+                    &ldquo;{quote}&rdquo;
+                  </p>
                 </div>
-                <p className="text-[11px] text-slate-500">
-                  {story.program}
-                </p>
+
+                <div className="pt-4 border-t border-[#EFECE8] space-y-1.5">
+                  <h4 className="font-heading font-bold text-base text-[#231F20]">
+                    {name}
+                  </h4>
+                  <div className="flex items-center space-x-1.5 text-xs text-[#F68632] font-bold">
+                    <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                    <span>{outcomeRole}</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500">
+                    {program}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Impact Page CTA */}

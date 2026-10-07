@@ -7,10 +7,12 @@ import { ArrowRight, CheckCircle2, Clock, MapPin, Award } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ProgramsOverview() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const pO = t.programsOverview;
   const [activeId, setActiveId] = useState(programsData[0].id);
   const activeProgram = programsData.find((p) => p.id === activeId) || programsData[0];
+
+  const isTa = lang === "ta";
 
   return (
     <section className="py-12 sm:py-16 bg-white border-b border-[#EFECE8]">
@@ -45,6 +47,9 @@ export default function ProgramsOverview() {
           <div className="lg:col-span-5 space-y-2">
             {programsData.map((program, idx) => {
               const isSelected = program.id === activeId;
+              const pTitle = isTa && program.titleTa ? program.titleTa : program.title;
+              const pShortDesc = isTa && program.shortDescriptionTa ? program.shortDescriptionTa : program.shortDescription;
+
               return (
                 <button
                   key={program.id}
@@ -56,22 +61,20 @@ export default function ProgramsOverview() {
                   }`}
                 >
                   <span
-                    className={`font-heading font-extrabold text-sm mt-0.5 ${
-                      isSelected ? "text-[#F68632]" : "text-[#F68632]"
-                    }`}
+                    className={`font-heading font-extrabold text-sm mt-0.5 text-[#F68632]`}
                   >
                     0{idx + 1}
                   </span>
                   <div className="space-y-1">
                     <p className="font-heading font-bold text-base leading-snug">
-                      {program.title}
+                      {pTitle}
                     </p>
                     <p
                       className={`text-xs line-clamp-1 ${
                         isSelected ? "text-slate-300" : "text-slate-500"
                       }`}
                     >
-                      {program.shortDescription}
+                      {pShortDesc}
                     </p>
                   </div>
                 </button>
@@ -85,20 +88,20 @@ export default function ProgramsOverview() {
             {/* Header / Badges */}
             <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[#EFECE8]">
               <span className="px-3 py-1 rounded-md bg-[#FFF2E7] text-[#F68632] text-xs font-bold border border-[#F68632]/30">
-                {activeProgram.badge}
+                {isTa && activeProgram.badgeTa ? activeProgram.badgeTa : activeProgram.badge}
               </span>
               <span className="px-3 py-1 rounded-md bg-emerald-100 text-emerald-800 text-xs font-bold">
-                {activeProgram.cost}
+                {isTa && activeProgram.costTa ? activeProgram.costTa : activeProgram.cost}
               </span>
             </div>
 
             {/* Title & Description */}
             <div className="space-y-2">
               <h3 className="font-heading font-extrabold text-2xl text-[#231F20]">
-                {activeProgram.title}
+                {isTa && activeProgram.titleTa ? activeProgram.titleTa : activeProgram.title}
               </h3>
               <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                {activeProgram.fullDescription}
+                {isTa && activeProgram.fullDescriptionTa ? activeProgram.fullDescriptionTa : activeProgram.fullDescription}
               </p>
             </div>
 
@@ -106,11 +109,11 @@ export default function ProgramsOverview() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-xl bg-white border border-[#EFECE8] text-xs text-slate-700">
               <div className="flex items-center space-x-2">
                 <Clock className="w-4 h-4 text-[#F68632] shrink-0" />
-                <span>{activeProgram.duration}</span>
+                <span>{isTa && activeProgram.durationTa ? activeProgram.durationTa : activeProgram.duration}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-[#F68632] shrink-0" />
-                <span>{activeProgram.mode}</span>
+                <span>{isTa && activeProgram.modeTa ? activeProgram.modeTa : activeProgram.mode}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Award className="w-4 h-4 text-[#F68632] shrink-0" />
@@ -124,7 +127,7 @@ export default function ProgramsOverview() {
                 {pO.coveredTitle}
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {activeProgram.skills.slice(0, 6).map((skill) => (
+                {((isTa && activeProgram.skillsTa) ? activeProgram.skillsTa : activeProgram.skills).slice(0, 6).map((skill) => (
                   <div key={skill} className="flex items-start space-x-2 text-xs text-slate-700">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#F68632] shrink-0 mt-0.5" />
                     <span>{skill}</span>
