@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import StickyMobileBar from "@/components/layout/StickyMobileBar";
 
 export const metadata: Metadata = {
   title: "Addithalam Foundation | Free IT Education & Mentorship in Chennai",
@@ -51,7 +50,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <StickyMobileBar />
         </LanguageProvider>
       </body>
     </html>

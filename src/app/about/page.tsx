@@ -58,14 +58,14 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-6 space-y-6">
+            <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
               <span className="text-xs font-bold text-[#F68632] uppercase tracking-widest block">
                 {a.originBadge}
               </span>
               <h2 className="font-heading font-extrabold text-3xl text-[#231F20] tracking-tight">
                 {a.originTitle}
               </h2>
-              <div className="space-y-4 text-base text-slate-700 leading-relaxed">
+              <div className="space-y-4 text-base text-slate-700 leading-relaxed text-center lg:text-left">
                 <p>{a.p1}</p>
                 <p>{a.p2}</p>
                 <p>{a.p3}</p>
@@ -111,10 +111,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core Values */}
+      {/* Core Values / Guiding Principles */}
       <section className="py-12 sm:py-16 bg-white border-b border-[#EFECE8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-3">
+          <div className="max-w-3xl space-y-3 text-center lg:text-left mx-auto lg:mx-0">
             <span className="text-xs font-bold text-[#F68632] uppercase tracking-widest block">
               {a.valuesBadge}
             </span>
@@ -126,14 +126,14 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {values.map((v) => (
               <div
                 key={v.title}
-                className="p-6 rounded-2xl bg-[#FAF8F5] border border-[#EFECE8] space-y-3"
+                className="p-4 sm:p-6 rounded-2xl bg-[#FAF8F5] border border-[#EFECE8] space-y-2 sm:space-y-3"
               >
-                <Award className="w-6 h-6 text-[#F68632]" />
-                <h3 className="font-heading font-bold text-lg text-[#231F20]">
+                <Award className="w-5 h-5 sm:w-6 sm:h-6 text-[#F68632]" />
+                <h3 className="font-heading font-bold text-base sm:text-lg text-[#231F20]">
                   {v.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
