@@ -52,7 +52,7 @@ export default function LearningJourney() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
-        <div className="max-w-3xl space-y-3 text-center sm:text-left">
+        <div className="max-w-3xl space-y-3 text-center sm:text-left mx-auto sm:mx-0">
           <p className="text-xs font-bold text-[#F68632] tracking-widest uppercase">
             {j.badge}
           </p>
@@ -64,26 +64,26 @@ export default function LearningJourney() {
           </p>
         </div>
 
-        {/* 6 Steps Grid */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 6 Steps Grid - 2 columns per row on mobile */}
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {steps.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.step}
-                className="p-6 rounded-2xl bg-white border border-[#EFECE8] shadow-xs hover:border-[#F68632]/50 hover:shadow-md transition-all flex flex-col justify-between space-y-4"
+                className="p-3.5 sm:p-6 rounded-2xl bg-white border border-[#EFECE8] shadow-xs hover:border-[#F68632]/50 hover:shadow-md transition-all flex flex-col justify-between space-y-3 sm:space-y-4"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-heading font-extrabold text-xl text-[#F68632]">
+                  <span className="font-heading font-extrabold text-base sm:text-xl text-[#F68632]">
                     {item.step}
                   </span>
-                  <div className="p-2.5 rounded-xl bg-[#FFF2E7] text-[#F68632]">
-                    <Icon className="w-5 h-5" />
+                  <div className="p-1.5 sm:p-2.5 rounded-xl bg-[#FFF2E7] text-[#F68632]">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                 </div>
 
-                <div className="space-y-1.5">
-                  <h3 className="font-heading font-bold text-lg text-[#231F20]">
+                <div className="space-y-1 sm:space-y-1.5">
+                  <h3 className="font-heading font-bold text-sm sm:text-lg text-[#231F20]">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
