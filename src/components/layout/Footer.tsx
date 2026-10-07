@@ -162,6 +162,18 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Addithalam Foundation. {fT.copyright}
           </div>
 
+          <div className="flex items-center justify-center space-x-1.5 text-slate-400">
+            <span>Built with Care by</span>
+            <a
+              href="https://ss40network.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#F68632] hover:text-white font-bold transition-colors underline decoration-slate-600 hover:decoration-[#F68632]"
+            >
+              SS40 Network
+            </a>
+          </div>
+
           <div className="flex items-center justify-center space-x-6">
             <Link href="/privacy" className="hover:text-white transition-colors">
               {fT.privacyPolicy}
