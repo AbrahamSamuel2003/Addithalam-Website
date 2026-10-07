@@ -120,24 +120,24 @@ export default function ImpactPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-12 sm:py-14 bg-[#1A1A1A] text-white">
+      <section className="py-12 sm:py-16 bg-white border-t border-[#EFECE8] text-[#231F20]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="font-heading font-extrabold text-3xl text-white">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#231F20]">
             {im.ctaTitle}
           </h2>
-          <p className="text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {im.ctaDesc}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
             <Link
               href="/contact"
-              className="px-6 py-3.5 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] transition-colors"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] active:scale-[0.98] transition-all shadow-xs"
             >
               {im.donateBtn}
             </Link>
             <Link
               href="/programs"
-              className="px-6 py-3.5 rounded-xl bg-white/10 text-white font-bold text-sm border border-white/20 hover:bg-white/20 transition-colors"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#FAF8F5] text-[#231F20] font-bold text-sm border border-[#EFECE8] hover:bg-slate-100 transition-colors shadow-xs"
             >
               {lang === "ta" ? "பயிற்சித் திட்டங்கள்" : "Explore Programs"}
             </Link>

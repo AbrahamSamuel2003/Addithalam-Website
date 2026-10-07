@@ -146,31 +146,31 @@ export default function AboutPage() {
       </section>
 
       {/* Governance & Trust Banner */}
-      <section className="py-12 bg-[#1A1A1A] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+      <section className="py-12 sm:py-16 bg-[#FAF8F5] border-t border-[#EFECE8] text-[#231F20]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="space-y-2 max-w-2xl">
-            <div className="flex items-center space-x-2 text-[#F68632] text-xs font-bold">
+            <div className="flex items-center space-x-2 text-[#F68632] text-xs font-bold justify-center md:justify-start">
               <ShieldCheck className="w-4 h-4" />
               <span>Full Statutory Accountability</span>
             </div>
-            <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white">
+            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#231F20]">
               {a.trustBannerTitle}
             </h3>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
               {a.trustBannerDesc}
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto justify-center">
             <Link
               href="/contact"
-              className="px-6 py-3 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] transition-colors"
+              className="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] active:scale-[0.98] transition-all shadow-xs"
             >
               Get in Touch
             </Link>
             <Link
               href="/programs"
-              className="px-6 py-3 rounded-xl bg-white/10 text-white font-bold text-sm border border-white/20 hover:bg-white/20 transition-colors"
+              className="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl bg-white text-[#231F20] font-bold text-sm border border-[#EFECE8] hover:bg-slate-50 transition-colors shadow-xs"
             >
               Explore Programs
             </Link>
