@@ -15,7 +15,7 @@ export default function LearnerStories() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-3">
+        <div className="max-w-3xl space-y-3 text-center md:text-left mx-auto md:mx-0">
           <p className="text-xs font-bold text-[#F68632] tracking-widest uppercase">
             {s.badge}
           </p>

@@ -40,7 +40,7 @@ export default function GalleryPage() {
         <div className="space-y-6">
           {/* Section Heading at the top */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-2">
+            <div className="space-y-2 text-center md:text-left mx-auto md:mx-0">
               <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#231F20]">
                 {isTa ? aspireEvent.titleTa : aspireEvent.title}
               </h2>
@@ -49,7 +49,7 @@ export default function GalleryPage() {
               </p>
             </div>
 
-            <div className="flex items-center space-x-2 text-xs font-semibold text-slate-500 bg-white px-3.5 py-2 rounded-xl border border-[#EFECE8] shrink-0">
+            <div className="flex items-center space-x-2 text-xs font-semibold text-slate-500 bg-white px-3.5 py-2 rounded-xl border border-[#EFECE8] shrink-0 self-center md:self-auto">
               <MapPin className="w-3.5 h-3.5 text-[#F68632]" />
               <span>{isTa ? aspireEvent.venueTa : aspireEvent.venue}</span>
             </div>
@@ -133,7 +133,7 @@ export default function GalleryPage() {
         {/* ========================================================================= */}
         <div className="space-y-6 pt-4 border-t border-[#EFECE8]">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-2">
+            <div className="space-y-2 text-center md:text-left mx-auto md:mx-0">
               <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#231F20]">
                 {isTa ? "ஃப்ரீடம் திருவிழா 2026 — வேல்ஸ் பல்கலைக்கழகம்" : "Freedom Carnival 2026 — Vels University, Chennai"}
               </h2>
@@ -144,7 +144,7 @@ export default function GalleryPage() {
               </p>
             </div>
 
-            <div className="flex items-center space-x-2 text-xs font-semibold text-slate-500 bg-white px-3.5 py-2 rounded-xl border border-[#EFECE8] shrink-0">
+            <div className="flex items-center space-x-2 text-xs font-semibold text-slate-500 bg-white px-3.5 py-2 rounded-xl border border-[#EFECE8] shrink-0 self-center md:self-auto">
               <MapPin className="w-3.5 h-3.5 text-[#F68632]" />
               <span>Vels University, Chennai</span>
             </div>

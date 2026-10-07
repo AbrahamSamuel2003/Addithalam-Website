@@ -39,8 +39,8 @@ export default function OpportunityGapSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Editorial Problem & Mission */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-white text-[#F68632] text-xs font-bold border border-[#EFECE8]">
+          <div className="lg:col-span-5 space-y-6 text-center lg:text-left">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-white text-[#F68632] text-xs font-bold border border-[#EFECE8] mx-auto lg:mx-0">
               <span>{o.badge}</span>
             </div>
 
@@ -52,7 +52,7 @@ export default function OpportunityGapSection() {
               {o.desc}
             </p>
 
-            <div className="p-5 rounded-xl bg-white border border-[#EFECE8] shadow-xs space-y-2">
+            <div className="p-5 rounded-xl bg-white border border-[#EFECE8] shadow-xs space-y-2 text-left">
               <p className="text-sm font-bold text-[#231F20]">
                 {o.commitmentTitle}
               </p>
@@ -61,7 +61,7 @@ export default function OpportunityGapSection() {
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 flex justify-center lg:justify-start">
               <Link
                 href="/about"
                 className="inline-flex items-center space-x-2 text-sm font-bold text-[#F68632] hover:text-[#231F20] transition-colors"

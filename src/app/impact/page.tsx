@@ -69,7 +69,7 @@ export default function ImpactPage() {
 
       {/* In-Depth Stories */}
       <section className="py-10 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="max-w-3xl space-y-2">
+        <div className="max-w-3xl space-y-2 text-center sm:text-left mx-auto sm:mx-0">
           <span className="text-xs font-bold text-[#F68632] uppercase tracking-widest block">
             {im.caseStudiesBadge}
           </span>

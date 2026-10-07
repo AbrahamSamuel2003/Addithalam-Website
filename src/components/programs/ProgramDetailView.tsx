@@ -44,18 +44,18 @@ export default function ProgramDetailView({ program }: Props) {
           <div className="lg:col-span-8 space-y-10">
             
             {/* Target Audience */}
-            <div className="p-6 rounded-2xl bg-white border border-[#EFECE8] shadow-xs space-y-2">
+            <div className="p-6 rounded-2xl bg-white border border-[#EFECE8] shadow-xs space-y-2 text-center sm:text-left">
               <h2 className="text-xs font-bold text-[#F68632] uppercase tracking-wider">
                 {d.whoIsItFor}
               </h2>
-              <p className="text-sm sm:text-base text-slate-800 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-800 leading-relaxed text-left sm:text-left">
                 {program.targetAudience}
               </p>
             </div>
 
             {/* Curriculum Breakdown */}
             <div className="space-y-6">
-              <div>
+              <div className="text-center sm:text-left">
                 <h2 className="font-heading font-bold text-2xl text-[#231F20]">
                   {d.syllabusTitle}
                 </h2>
@@ -68,7 +68,7 @@ export default function ProgramDetailView({ program }: Props) {
                 {program.curriculum.map((module, idx) => (
                   <div
                     key={module.moduleTitle}
-                    className="p-6 rounded-2xl bg-white border border-[#EFECE8] shadow-xs space-y-3"
+                    className="p-6 rounded-2xl bg-white border border-[#EFECE8] shadow-xs space-y-3 text-left"
                   >
                     <div className="flex items-center space-x-3">
                       <span className="w-7 h-7 rounded-lg bg-[#231F20] text-[#F68632] font-heading font-bold text-xs flex items-center justify-center shrink-0">
@@ -93,10 +93,12 @@ export default function ProgramDetailView({ program }: Props) {
 
             {/* Expected Career Outcomes */}
             <div className="space-y-4">
-              <h2 className="font-heading font-bold text-2xl text-[#231F20]">
-                {d.outcomesTitle}
-              </h2>
-              <div className="p-6 rounded-2xl bg-[#FFF2E7] border border-[#F68632]/30 space-y-3">
+              <div className="text-center sm:text-left">
+                <h2 className="font-heading font-bold text-2xl text-[#231F20]">
+                  {d.outcomesTitle}
+                </h2>
+              </div>
+              <div className="p-6 rounded-2xl bg-[#FFF2E7] border border-[#F68632]/30 space-y-3 text-left">
                 {program.outcomes.map((outcome) => (
                   <div key={outcome} className="flex items-start space-x-2.5 text-sm text-[#231F20] font-medium">
                     <CheckCircle2 className="w-4 h-4 text-[#F68632] shrink-0 mt-0.5" />
@@ -111,7 +113,7 @@ export default function ProgramDetailView({ program }: Props) {
           {/* Right Column: Key Logistics & Direct Apply Card (4 Cols) */}
           <div className="lg:col-span-4 sticky top-24 space-y-6">
             <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#EFECE8] shadow-md space-y-6">
-              <div className="space-y-1">
+              <div className="space-y-1 text-center sm:text-left">
                 <span className="text-xs font-bold text-[#F68632] uppercase tracking-wider block">
                   Program Details
                 </span>

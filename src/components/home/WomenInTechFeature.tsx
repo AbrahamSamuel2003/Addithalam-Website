@@ -46,8 +46,8 @@ export default function WomenInTechFeature() {
           </div>
 
           {/* Right Column: Editorial & Value Proposition */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FFF2E7] text-[#F68632] border border-[#F68632]/30 text-xs font-bold">
+          <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FFF2E7] text-[#F68632] border border-[#F68632]/30 text-xs font-bold mx-auto lg:mx-0">
               <span>{w.badge}</span>
             </div>
 
@@ -59,7 +59,7 @@ export default function WomenInTechFeature() {
               {w.desc}
             </p>
 
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3 pt-2 text-left">
               {highlights.map((item) => (
                 <div key={item} className="flex items-start space-x-3 text-sm text-slate-800">
                   <CheckCircle2 className="w-5 h-5 text-[#F68632] shrink-0 mt-0.5" />
@@ -68,7 +68,7 @@ export default function WomenInTechFeature() {
               ))}
             </div>
 
-            <div className="pt-4 flex flex-col sm:flex-row items-center gap-3">
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
               <Link
                 href="/programs/women-in-tech"
                 className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-[#F68632] text-white font-bold text-sm hover:bg-[#E07418] transition-colors shadow-xs"

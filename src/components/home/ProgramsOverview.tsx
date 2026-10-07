@@ -18,7 +18,7 @@ export default function ProgramsOverview() {
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-[#EFECE8]">
-          <div className="space-y-2 max-w-2xl">
+          <div className="space-y-2 max-w-2xl text-center md:text-left mx-auto md:mx-0">
             <p className="text-xs font-bold text-[#F68632] tracking-widest uppercase">
               {pO.badge}
             </p>
@@ -31,7 +31,7 @@ export default function ProgramsOverview() {
           </div>
           <Link
             href="/programs"
-            className="inline-flex items-center space-x-2 text-sm font-bold text-[#F68632] hover:text-[#231F20] transition-colors self-start md:self-auto"
+            className="inline-flex items-center space-x-2 text-sm font-bold text-[#F68632] hover:text-[#231F20] transition-colors self-center md:self-auto"
           >
             <span>{pO.viewAllBtn}</span>
             <ArrowRight className="w-4 h-4" />
