@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Compass, Code2, Layers, UserCheck, FileCheck, Rocket } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function LearningJourney() {
@@ -13,37 +12,31 @@ export default function LearningJourney() {
       step: "01",
       title: j.step1Title,
       desc: j.step1Desc,
-      icon: Compass
     },
     {
       step: "02",
       title: j.step2Title,
       desc: j.step2Desc,
-      icon: Code2
     },
     {
       step: "03",
       title: j.step3Title,
       desc: j.step3Desc,
-      icon: Layers
     },
     {
       step: "04",
       title: j.step4Title,
       desc: j.step4Desc,
-      icon: UserCheck
     },
     {
       step: "05",
       title: j.step5Title,
       desc: j.step5Desc,
-      icon: FileCheck
     },
     {
       step: "06",
       title: j.step6Title,
       desc: j.step6Desc,
-      icon: Rocket
     }
   ];
 
@@ -66,33 +59,27 @@ export default function LearningJourney() {
 
         {/* 6 Steps Grid - 2 columns per row on mobile */}
         <div className="mt-8 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-          {steps.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.step}
-                className="p-3.5 sm:p-6 rounded-2xl bg-white border border-[#EFECE8] shadow-xs hover:border-[#F68632]/50 hover:shadow-md transition-all flex flex-col justify-between space-y-3 sm:space-y-4"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-heading font-extrabold text-base sm:text-xl text-[#F68632]">
-                    {item.step}
-                  </span>
-                  <div className="p-1.5 sm:p-2.5 rounded-xl bg-[#FFF2E7] text-[#F68632]">
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </div>
-                </div>
-
-                <div className="space-y-1 sm:space-y-1.5">
-                  <h3 className="font-heading font-bold text-sm sm:text-lg text-[#231F20]">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
+          {steps.map((item) => (
+            <div
+              key={item.step}
+              className="p-4 sm:p-6 rounded-2xl bg-white border border-[#EFECE8] shadow-xs hover:border-[#F68632]/50 hover:shadow-md transition-all flex flex-col justify-between space-y-3 sm:space-y-4"
+            >
+              <div>
+                <span className="font-heading font-extrabold text-lg sm:text-2xl text-[#F68632] block">
+                  {item.step}
+                </span>
               </div>
-            );
-          })}
+
+              <div className="space-y-1 sm:space-y-1.5 flex-1">
+                <h3 className="font-heading font-bold text-sm sm:text-lg text-[#231F20]">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>
